@@ -1,0 +1,8 @@
+# Tox configuration file
+# Read more under https://tox.wiki/en/4.60.0/index.html
+env_list = ["3.10", "3.11", "3.12", "3.13", "3.14"]
+requires = ["tox >= 4"]
+
+[env_run_base]
+deps = ["-r requirements.txt"]
+commands = [["python", "test.py"]]
