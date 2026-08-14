@@ -10,6 +10,13 @@ setup(name='ly2video',
       author_email='github@adamspiers.org',
       url='https://github.com/aspiers/ly2video',
       packages=['ly2video'],
+      install_requires=[
+        "mido==1.3.3",
+        "packaging==26.3",
+        "pexpect==4.9.0",
+        "pillow==12.3.0",
+        "ptyprocess==0.7.0"
+      ],
       entry_points={
           'console_scripts': [
               'ly2video = ly2video.cli:main'
