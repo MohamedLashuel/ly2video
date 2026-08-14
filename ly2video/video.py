@@ -39,19 +39,14 @@ except NameError:
 
 def writeCursorLine(image, X, color):
     """Draws a line on the image"""
-    for pixel in range(image.size[1]):
-        image.putpixel((X    , pixel), color)
-        image.putpixel((X + 1, pixel), color)
+    image.paste(color, (X, 0, X+2, image.size[1]))
 
 def writeMeasureCursor(image, start, end, color, cursor_height=10):
     """Draws a box at the bottom of the image"""
     w, h = image.size
     if start > w :
         raise Exception()
-    for dx in range(end-start) :
-        for y in range(cursor_height):
-            if start + dx < w and start + dx > 0 :
-                image.putpixel((start + dx, h-y-1), color)
+    image.paste(color, (start, h - cursor_height, end, h))
 
 def findTopStaffLine(image, lineLength):
     """
